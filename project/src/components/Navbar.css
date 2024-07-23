@@ -1,0 +1,56 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px; /* Ensure some padding on the sides */
+    margin-right: 2rem;
+    margin-left: 2rem;
+} 
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    padding: 0 20px; /* Add padding to the sides */
+    border-bottom: 0.5px solid black; /* Add bottom border */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.logo img {
+    height: 70px; /* Adjust the height as needed */
+    width: auto;
+}
+
+
+.class-name h3 {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+}
+
+.ct-login button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
