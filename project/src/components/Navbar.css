@@ -3,7 +3,8 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     width: 100%;
-  }
+    font-family: 'Roboto', sans-serif; /* Base font family */
+}
 
 * {
     margin: 0;
@@ -11,14 +12,16 @@ html, body {
     box-sizing: border-box;
 }
 
+/* Container with max width and padding */
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px; /* Ensure some padding on the sides */
+    padding: 0 20px;
     margin-right: 2rem;
     margin-left: 2rem;
-} 
+}
 
+/* Navbar styling */
 nav {
     display: flex;
     justify-content: space-between;
@@ -28,29 +31,56 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: white; /* White background for navbar */
     z-index: 1000;
-    padding: 0 20px; /* Add padding to the sides */
-    border-bottom: 0.5px solid black; /* Add bottom border */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    padding: 0 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
+/* Logo styling */
 .logo img {
-    height: 70px; /* Adjust the height as needed */
+    height: 70px;
     width: auto;
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
+/* Adding hover effect to logo */
+.logo img:hover {
+    transform: scale(1.1);
+}
 
+/* Class name styling */
 .class-name h3 {
     margin: 0;
-    font-size: 24px;
-    color: black;
+    font-size: 26px; /* Slightly larger font size */
+    color: #2c3e50; /* Darker color for premium feel */
+    font-family: 'Lora', serif; /* Elegant serif font for a premium look */
+    font-weight: 700; /* Bold text for prominence */
+    letter-spacing: 1px; /* Slight letter spacing */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
+/* Admin login button styling */
 .ct-login button {
     padding: 10px 20px;
     font-size: 16px;
-    border: 1px solid black;
+    border: 2px solid #2c3e50; /* Dark border for contrast */
+    background-color: white;
+    color: #2c3e50; /* Dark text color for contrast */
     cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Roboto', sans-serif; /* Consistent font family */
+    font-weight: 500; /* Medium weight for readability */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
+/* Adding hover effect to admin login button */
+.ct-login button:hover {
+    background-color: #f4f4f4; /* Light grey background on hover */
+    color: #000; /* Darker text color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    border-color: #000; /* Darker border color on hover */
+}

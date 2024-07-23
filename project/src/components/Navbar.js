@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleAdminLoginClick = () => {
+    navigate('/login');
+  };
 
   return (
     <nav className='container'>
@@ -12,7 +18,7 @@ const Navbar = () => {
         <h3>INTERNET OF THINGS - III</h3>
       </div>
       <div className="ct-login">
-        <button >Admin Login</button>
+        <button onClick={handleAdminLoginClick}>Admin Login</button>
       </div>
     </nav>
   );

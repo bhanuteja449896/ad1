@@ -1,0 +1,101 @@
+/* Main container covering full viewport */
+.main {
+    height: 100vh;
+    width: 100vw;
+    /* background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centering login-page div */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Styling login-form with shadow and transition */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 25vw;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow */
+    border: 1.5px solid #ccc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Adding hover effect to login-form */
+.login-form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling login-heading */
+.login-heading {
+    font-size: 2rem;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Styling h4 inside login-heading */
+.login-heading h4 {
+    margin: 0;
+}
+
+/* Styling login-form-data */
+.login-form-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(70vh - 15vh); /* Adjusting height */
+    padding: 0 20px;
+    gap: 2rem;
+}
+
+/* Styling input fields */
+.login-form-data input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Adding focus effect to input fields */
+.login-form-data input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+/* Styling the login button */
+.login-form-data button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Adding hover effect to login button */
+.login-form-data button:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: scale(1.05);
+}
