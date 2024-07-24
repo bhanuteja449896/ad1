@@ -1,0 +1,76 @@
+.body-container {
+    display: flex;
+    height: calc(100vh - 72px);
+    background-color: white;
+    overflow: hidden;
+}
+
+.names-list {
+    width: 30%;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    margin-left: 32px;
+}
+
+.name-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.name-item:hover {
+    background-color: #e0e0e0;
+}
+
+.data-display {
+    width: 70%;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-right: 32px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.buttons-container button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    border: 2px solid #2c3e50;
+    background-color: white;
+    color: #2c3e50;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.buttons-container button:hover,
+.buttons-container button.active {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item-box {
+    width: calc(25% - 10px); /* Four items per row */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}

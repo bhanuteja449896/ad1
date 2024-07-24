@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Body from "./Body";
-import "./Home.css";
+import "./css/Home.css";
 
 const Home = () => {
   return (

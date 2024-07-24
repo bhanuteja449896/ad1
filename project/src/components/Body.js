@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./Body.css";
+import "./css/Body.css";
 
 const Body = () => {
   const [data, setData] = useState({});
   const [selectedName, setSelectedName] = useState(null);
+  const [showFiles, setShowFiles] = useState(true);
 
   useEffect(() => {
     // Fetch data from the JSON file
@@ -14,6 +15,7 @@ const Body = () => {
 
   const handleNameClick = (name) => {
     setSelectedName(name);
+    setShowFiles(true); // Default to showing files when a name is clicked
   };
 
   return (
@@ -28,21 +30,22 @@ const Body = () => {
       <div className="data-display">
         {selectedName && (
           <>
-            <h2>Files</h2>
-            <div className="files-list">
-              {data[selectedName].files.map((file, index) => (
-                <div key={index} className="file-item">
-                  {file}
-                </div>
-              ))}
+            <div className="buttons-container">
+              <button className={showFiles ? "active" : ""} onClick={() => setShowFiles(true)}>Files</button>
+              <button className={!showFiles ? "active" : ""} onClick={() => setShowFiles(false)}>Images</button>
             </div>
-            <h2>Images</h2>
-            <div className="images-list">
-              {data[selectedName].images.map((image, index) => (
-                <div key={index} className="image-item">
-                  {image}
-                </div>
-              ))}
+            <div className="items-list">
+              {showFiles
+                ? data[selectedName].files.map((file, index) => (
+                    <div key={index} className="item-box">
+                      {file}
+                    </div>
+                  ))
+                : data[selectedName].images.map((image, index) => (
+                    <div key={index} className="item-box">
+                      {image}
+                    </div>
+                  ))}
             </div>
           </>
         )}
