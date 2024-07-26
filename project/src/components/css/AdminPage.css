@@ -1,0 +1,100 @@
+.admin-page {
+    display: flex;
+    height: calc(100vh - 72px); /* Adjust based on the navbar height */
+    background-color: white;
+  }
+
+  .home {
+    margin-top: 72px; /* Adjust according to the navbar height */
+    width: 100%;
+    height: calc(100vh - 72px); /* Ensures the height of the home container fits the screen */
+    overflow: hidden; /* Prevents extra scrollbars */
+}
+  
+  .names-list {
+    width: 30%; /* 3:7 ratio */
+    overflow-y: scroll;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .name-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+  
+  .name-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .name-item.selected {
+    background-color: #e0e0e0; /* Highlight selected name */
+  }
+  
+  .data-display {
+    width: 70%; /* 3:7 ratio */
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .toggle-buttons {
+    margin-bottom: 10px;
+  }
+  
+  .toggle-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .toggle-buttons button.active {
+    background-color: black;
+    color: white;
+  }
+  
+  .files-list, .images-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .file-item, .image-item {
+    width: calc(25% - 10px); /* 4 items per row */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .delete-btn:hover {
+    color: darkred;
+  }
+  
+  .no-data {
+    padding: 10px;
+    color: #888;
+    text-align: center;
+  }
+  

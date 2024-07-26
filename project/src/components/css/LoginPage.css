@@ -99,3 +99,26 @@
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     transform: scale(1.05);
 }
+
+/* Adding animation classes */
+.login-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    animation: fadeInOut 2s;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.login-form.success .login-animation.success {
+    display: block;
+}
+
+.login-form.error .login-animation.error {
+    display: block;
+}
