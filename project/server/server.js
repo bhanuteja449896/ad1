@@ -1,56 +1,72 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT || 3000;
+const dbFilePath = path.join(__dirname, '..', 'public', 'db.json');  // Updated path
+const credentialsFilePath = path.join(__dirname, '..', 'public', 'credentials.json');  // Updated path
 
-app.use(express.json());
+// Middleware to parse JSON requests
+app.use(bodyParser.json());
 
-const dataFilePath = path.join(__dirname, 'db.json');
+// Endpoint to handle 'Add' button click
+app.post('/add', (req, res) => {
+    const newData = req.body;
+    console.log('Received data:', newData);
 
-// Middleware to log every request
-app.use((req, res, next) => {
-  console.log(`${req.method} request made to ${req.url}`);
-  next();
-});
-
-// Route to get data
-app.get('/data', (req, res) => {
-  fs.readFile(dataFilePath, (err, data) => {
-    if (err) {
-      console.error('Error reading data file:', err);
-      return res.status(500).send('Server error');
-    }
-    res.json(JSON.parse(data));
-  });
-});
-
-// Route to delete a file or image
-app.delete('/delete/:name/:type/:index', (req, res) => {
-  const { name, type, index } = req.params;
-  fs.readFile(dataFilePath, (err, data) => {
-    if (err) {
-      console.error('Error reading data file:', err);
-      return res.status(500).send('Server error');
-    }
-    let dataObj = JSON.parse(data);
-    if (dataObj[name] && dataObj[name][type]) {
-      dataObj[name][type].splice(index, 1);
-      fs.writeFile(dataFilePath, JSON.stringify(dataObj, null, 2), (err) => {
-        if (err) {
-          console.error('Error writing data file:', err);
-          return res.status(500).send('Server error');
+    // Read existing data from db.json
+    fs.readFile(dbFilePath, (err, data) => {
+        if (err && err.code !== 'ENOENT') {
+            console.error('Error reading db.json:', err);
+            return res.status(500).json({ error: 'Failed to read database file' });
         }
-        console.log(`Deleted ${type} index ${index} for ${name}`);
-        res.send('Data deleted');
-      });
-    } else {
-      res.status(404).send('Data not found');
-    }
-  });
+
+        let existingData = {};
+        if (!err) {
+            try {
+                existingData = JSON.parse(data);
+            } catch (parseErr) {
+                console.error('Error parsing db.json:', parseErr);
+                return res.status(500).json({ error: 'Failed to parse database file' });
+            }
+        }
+
+        // Add new data to existing data
+        existingData[newData.name] = { files: [], images: [] };
+
+        // Write updated data back to db.json
+        fs.writeFile(dbFilePath, JSON.stringify(existingData, null, 2), (writeErr) => {
+            if (writeErr) {
+                console.error('Error writing to db.json:', writeErr);
+                return res.status(500).json({ error: 'Failed to write to database file' });
+            }
+
+            res.status(200).json({ message: 'Data added successfully' });
+        });
+    });
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+// Endpoint to handle 'update-data' POST requests
+app.post('/update-data', (req, res) => {
+    const updatedData = req.body;
+
+    // Write updated data back to db.json
+    fs.writeFile(dbFilePath, JSON.stringify(updatedData, null, 2), (writeErr) => {
+        if (writeErr) {
+            console.error('Error writing to db.json:', writeErr);
+            return res.status(500).json({ error: 'Failed to write to database file' });
+        }
+
+        res.status(200).json({ message: 'Data updated successfully' });
+    });
+});
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });

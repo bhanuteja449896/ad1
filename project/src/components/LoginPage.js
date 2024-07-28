@@ -19,7 +19,7 @@ const LoginPage = () => {
         setLoginStatus("success");
         setTimeout(() => {
           navigate("/admin"); // Redirect to the admin page
-        }, 2000);
+        }, 1000);
       } else {
         setLoginStatus("error");
         setTimeout(() => setLoginStatus(null), 2000); // Hide error after 2 seconds

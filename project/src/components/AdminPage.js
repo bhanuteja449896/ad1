@@ -7,23 +7,33 @@ const AdminPage = () => {
   const [selectedName, setSelectedName] = useState(null);
   const [showFiles, setShowFiles] = useState(false);
   const [showImages, setShowImages] = useState(false);
+  const [newName, setNewName] = useState("");
 
   useEffect(() => {
-    // Fetch data from the JSON file
-    fetch("/db.json")
-      .then((response) => response.json())
-      .then((data) => setData(data.data));
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/db.json");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const result = await response.json();
+        console.log("Data fetched:", result); // Debugging line
+        setData(result.data); // Access the 'data' property
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleNameClick = (name) => {
     if (selectedName === name) {
-      // Toggle visibility if the same name is clicked again
       setShowFiles(!showFiles);
       setShowImages(!showImages);
     } else {
-      // Select the name and show the buttons
       setSelectedName(name);
-      setShowFiles(true); // Default to showing files
+      setShowFiles(true);
       setShowImages(false);
     }
   };
@@ -38,7 +48,7 @@ const AdminPage = () => {
     setShowImages(true);
   };
 
-  const handleDelete = (type, index) => {
+  const handleDelete = async (type, index) => {
     const updatedData = { ...data };
     if (type === "files") {
       updatedData[selectedName].files.splice(index, 1);
@@ -47,18 +57,45 @@ const AdminPage = () => {
     }
     setData(updatedData);
 
-    // Send a request to update the JSON file
-    fetch("/update-data", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedData),
-    }).then((response) => {
+    try {
+      const response = await fetch("/update-data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+      });
+
       if (!response.ok) {
-        console.error("Failed to update data");
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-    });
+    } catch (error) {
+      console.error("Failed to update data:", error);
+    }
+  };
+
+  const handleAddName = async () => {
+    if (newName.trim()) {
+      const updatedData = { ...data, [newName]: { files: [], images: [] } };
+      setData(updatedData);
+      setNewName("");
+
+      try {
+        const response = await fetch("/update-data", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+      } catch (error) {
+        console.error("Failed to add new name:", error);
+      }
+    }
   };
 
   return (
@@ -66,9 +103,15 @@ const AdminPage = () => {
       <AdminNavbar />
       <div className="admin-page">
         <div className="names-list">
-        <div className="edit">
-          Edit 
-        </div>
+          <div className="edit">
+            <input
+              type="text"
+              placeholder="New folder name"
+              value={newName}
+              onChange={(e) => setNewName(e.target.value)}
+            />
+            <button onClick={handleAddName}>Add</button>
+          </div>
           {Object.keys(data).map((name) => (
             <div
               key={name}
@@ -100,7 +143,7 @@ const AdminPage = () => {
                 <>
                   <h2>Files</h2>
                   <div className="files-list">
-                    {data[selectedName].files.length > 0 ? (
+                    {data[selectedName]?.files?.length > 0 ? (
                       data[selectedName].files.map((file, index) => (
                         <div key={index} className="file-item">
                           {file}
@@ -122,7 +165,7 @@ const AdminPage = () => {
                 <>
                   <h2>Images</h2>
                   <div className="images-list">
-                    {data[selectedName].images.length > 0 ? (
+                    {data[selectedName]?.images?.length > 0 ? (
                       data[selectedName].images.map((image, index) => (
                         <div key={index} className="image-item">
                           {image}
