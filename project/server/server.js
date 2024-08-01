@@ -1,72 +1,125 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
-const path = require('path');
-
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
 const app = express();
-const PORT = process.env.PORT || 3000;
-const dbFilePath = path.join(__dirname, '..', 'public', 'db.json');  // Updated path
-const credentialsFilePath = path.join(__dirname, '..', 'public', 'credentials.json');  // Updated path
+const port = 3000;
+const cors = require('cors');
 
-// Middleware to parse JSON requests
-app.use(bodyParser.json());
+const jsonFilePath = path.join(__dirname, 'db.json');
 
-// Endpoint to handle 'Add' button click
-app.post('/add', (req, res) => {
-    const newData = req.body;
-    console.log('Received data:', newData);
 
-    // Read existing data from db.json
-    fs.readFile(dbFilePath, (err, data) => {
-        if (err && err.code !== 'ENOENT') {
-            console.error('Error reading db.json:', err);
-            return res.status(500).json({ error: 'Failed to read database file' });
-        }
 
-        let existingData = {};
-        if (!err) {
-            try {
-                existingData = JSON.parse(data);
-            } catch (parseErr) {
-                console.error('Error parsing db.json:', parseErr);
-                return res.status(500).json({ error: 'Failed to parse database file' });
-            }
-        }
+app.use(cors()); 
 
-        // Add new data to existing data
-        existingData[newData.name] = { files: [], images: [] };
+// Middleware to parse JSON bodies
+app.use(express.json());
 
-        // Write updated data back to db.json
-        fs.writeFile(dbFilePath, JSON.stringify(existingData, null, 2), (writeErr) => {
-            if (writeErr) {
-                console.error('Error writing to db.json:', writeErr);
-                return res.status(500).json({ error: 'Failed to write to database file' });
-            }
+// Serve static files from 'public' directory (if needed)
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/test',(req,res)=>{
+  res.send('Hello World')
+})
+// Handle update data request
+app.post("/update-data", (req, res) => {
+  console.log("Update Data Request Received");
+  const newData = req.body;
 
-            res.status(200).json({ message: 'Data added successfully' });
-        });
+  fs.readFile(path.join(__dirname, "db.json"), "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      res.status(500).send("Error reading file");
+      return;
+    }
+
+    const jsonData = JSON.parse(data);
+    jsonData.folder = newData.folder;
+
+    fs.writeFile(path.join(__dirname, "db.json"), JSON.stringify(jsonData, null, 2), "utf8", (err) => {
+      if (err) {
+        console.error("Error writing file:", err);
+        res.status(500).send("Error writing file");
+        return;
+      }
+
+      console.log("Data successfully updated in db.json");
+      res.status(200).send("Data updated successfully");
     });
+  });
 });
 
-// Endpoint to handle 'update-data' POST requests
-app.post('/update-data', (req, res) => {
-    const updatedData = req.body;
 
-    // Write updated data back to db.json
-    fs.writeFile(dbFilePath, JSON.stringify(updatedData, null, 2), (writeErr) => {
+app.post("/add-folder", (req, res) => {
+  try {
+    const { name } = req.body; // Get the new folder name from the request
+
+    if (!name || typeof name !== 'string') {
+      return res.status(400).json({ message: "Invalid folder name" });
+    }
+
+    // Read the existing JSON data
+    fs.readFile(jsonFilePath, 'utf8', (err, data) => {
+      if (err) {
+        console.error("Error reading file:", err);
+        return res.status(500).json({ message: "Error reading file" });
+      }
+
+      let jsonData;
+      try {
+        jsonData = JSON.parse(data);
+      } catch (parseError) {
+        console.error("Error parsing JSON:", parseError);
+        return res.status(500).json({ message: "Error parsing JSON" });
+      }
+
+      // Add the new folder with empty files and images arrays
+      if (!jsonData.folder) {
+        jsonData.folder = {};
+      }
+      
+      if (!jsonData.folder[name]) {
+        jsonData.folder[name] = { files: [], images: [] };
+      } else {
+        return res.status(400).json({ message: "Folder already exists" });
+      }
+
+      // Write the updated JSON data back to the file
+      fs.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8', (writeErr) => {
         if (writeErr) {
-            console.error('Error writing to db.json:', writeErr);
-            return res.status(500).json({ error: 'Failed to write to database file' });
+          console.error("Error writing file:", writeErr);
+          return res.status(500).json({ message: "Error writing file" });
         }
 
-        res.status(200).json({ message: 'Data updated successfully' });
+        console.log("Folder added successfully:", name);
+        res.status(200).json({ message: "Folder added successfully", data: { name, files: [], images: [] } });
+      });
     });
+  } catch (error) {
+    console.error("Error processing request:", error);
+    res.status(400).json({ message: "Error processing request" });
+  }
 });
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, '..', 'public')));
+
+app.get('/get-db', (req, res) => {
+  fs.readFile(jsonFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return res.status(500).json({ message: "Error reading file" });
+    }
+
+    try {
+      const jsonData = JSON.parse(data);
+      res.status(200).json(jsonData);
+    } catch (parseError) {
+      console.error("Error parsing JSON:", parseError);
+      res.status(500).json({ message: "Error parsing JSON" });
+    }
+  });
+});
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });
+
+

@@ -12,13 +12,12 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/db.json");
+        const response = await fetch("http://localhost:3000/get-db");
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const result = await response.json();
-        console.log("Data fetched:", result); // Debugging line
-        setData(result.data); // Access the 'data' property
+        setData(result.folder);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -63,7 +62,7 @@ const AdminPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedData),
+        body: JSON.stringify({ folder: updatedData }),
       });
 
       if (!response.ok) {
@@ -76,22 +75,23 @@ const AdminPage = () => {
 
   const handleAddName = async () => {
     if (newName.trim()) {
-      const updatedData = { ...data, [newName]: { files: [], images: [] } };
-      setData(updatedData);
-      setNewName("");
-
       try {
-        const response = await fetch("/update-data", {
+        const response = await fetch("http://localhost:3000/add-folder", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(updatedData),
+          body: JSON.stringify({ name: newName }),
         });
+        console.log(response)
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
+        const newData = { ...data, [newName]: { files: [], images: [] } };
+        setData(newData);
+        setNewName("");
       } catch (error) {
         console.error("Failed to add new name:", error);
       }
