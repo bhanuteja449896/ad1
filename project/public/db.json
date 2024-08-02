@@ -1,14 +1,6 @@
 {
   "folder": {
-    "22n31a6932" : {
-      "name": "teja",
-      "files" : [
-        {
-          "fileId" : 12345,
-          "fileLink" : "https://localhost:3000/files/12345.pdf"
-        }
-      ]
-    },
+
     "John Doe": {
       "files": ["file1.pdf", "file2.docx", "file3.pptx", "file4.xlsx", "file5.txt"],
       "images": ["image1.jpg", "image2.png", "image3.gif", "image4.bmp", "image5.tiff"]
@@ -51,3 +43,5 @@
     }
   }
 }
+
+

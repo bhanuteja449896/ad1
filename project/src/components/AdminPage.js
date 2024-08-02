@@ -57,7 +57,7 @@ const AdminPage = () => {
     setData(updatedData);
 
     try {
-      const response = await fetch("/update-data", {
+      const response = await fetch("http://localhost:3000/update-data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const AdminPage = () => {
           },
           body: JSON.stringify({ name: newName }),
         });
-        console.log(response)
+        console.log(response);
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -110,7 +110,7 @@ const AdminPage = () => {
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
             />
-            <button onClick={handleAddName}>Add</button>
+            <button onClick={handleAddName}>Add +</button>
           </div>
           {Object.keys(data).map((name) => (
             <div
@@ -138,6 +138,10 @@ const AdminPage = () => {
                 >
                   Images
                 </button>
+                <div className="files-edit">
+                  <button>Add +</button>
+                </div>
+
               </div>
               {showFiles && (
                 <>

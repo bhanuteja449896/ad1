@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/test',(req,res)=>{
   res.send('Hello World')
 })
+
 // Handle update data request
 app.post("/update-data", (req, res) => {
   console.log("Update Data Request Received");

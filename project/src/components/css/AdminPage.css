@@ -43,7 +43,10 @@
 }
 
 .toggle-buttons {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+  gap: 10px;
 }
 
 .toggle-buttons button {
@@ -54,7 +57,6 @@
   color: #333;
   cursor: pointer;
   border-radius: 5px;
-  margin-right: 10px;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -101,6 +103,18 @@
 /* Edit Button Styles */
 .edit {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit input {
+  height: 34px;
+  width: 65%;
+  border: 0.5px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 6px;
 }
 
 .edit button {
@@ -121,6 +135,28 @@
 }
 
 .edit button:active {
+  background-color: #004085; /* Even darker blue color */
+  transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+.files-edit button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.files-edit button:hover {
+  background-color: #0056b3; /* Darker blue color */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.files-edit button:active {
   background-color: #004085; /* Even darker blue color */
   transform: scale(0.95); /* Slightly shrink the button on click */
 }
