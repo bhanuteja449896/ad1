@@ -7,25 +7,31 @@ const cors = require('cors');
 
 const jsonFilePath = path.join(__dirname, 'db.json');
 
-
-
-app.use(cors()); 
+app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(express.json());
 
 // Serve static files from 'public' directory (if needed)
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/test',(req,res)=>{
-  res.send('Hello World')
-})
+
+// Serve files from the 'files' directory
+app.use('/files', express.static(path.join(__dirname, 'files')));
+
+// Serve images from the 'images' directory
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+// Test route
+app.get('/test', (req, res) => {
+  res.send('Hello World');
+});
 
 // Handle update data request
 app.post("/update-data", (req, res) => {
   console.log("Update Data Request Received");
   const newData = req.body;
 
-  fs.readFile(path.join(__dirname, "db.json"), "utf8", (err, data) => {
+  fs.readFile(jsonFilePath, "utf8", (err, data) => {
     if (err) {
       console.error("Error reading file:", err);
       res.status(500).send("Error reading file");
@@ -35,7 +41,7 @@ app.post("/update-data", (req, res) => {
     const jsonData = JSON.parse(data);
     jsonData.folder = newData.folder;
 
-    fs.writeFile(path.join(__dirname, "db.json"), JSON.stringify(jsonData, null, 2), "utf8", (err) => {
+    fs.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), "utf8", (err) => {
       if (err) {
         console.error("Error writing file:", err);
         res.status(500).send("Error writing file");
@@ -48,7 +54,7 @@ app.post("/update-data", (req, res) => {
   });
 });
 
-
+// Handle add folder request
 app.post("/add-folder", (req, res) => {
   try {
     const { name } = req.body; // Get the new folder name from the request
@@ -100,7 +106,7 @@ app.post("/add-folder", (req, res) => {
   }
 });
 
-
+// Serve database content
 app.get('/get-db', (req, res) => {
   fs.readFile(jsonFilePath, 'utf8', (err, data) => {
     if (err) {
@@ -122,5 +128,3 @@ app.get('/get-db', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
-

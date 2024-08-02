@@ -1,145 +1,40 @@
 {
   "folder": {
     "EVENTS": {
-      "files": [
-        "file44.xlsx",
-        "file45.txt"
-      ],
-      "images": [
-        "image41.jpg",
-        "image42.png",
-        "image43.gif",
-        "image44.bmp",
-        "image45.tiff"
-      ]
+      "files": [],
+      "images": ["circular.jpg","muharram.jpg","bonalu.jpg"]
     },
     "ARTIFICIAL INTELLIGENCE": {
-      "files": [
-        "file1.pdf",
-        "file2.docx",
-        "file3.pptx",
-        "file4.xlsx",
-        "file5.txt"
-      ],
-      "images": [
-        "image1.jpg",
-        "image2.png",
-        "image3.gif",
-        "image4.bmp",
-        "image5.tiff"
-      ]
+      "files": [],
+      "images": []
     },
     "ROBOTICS & AUTOMATION": {
-      "files": [
-        "file6.pdf",
-        "file7.docx",
-        "file8.pptx",
-        "file9.xlsx",
-        "file10.txt"
-      ],
-      "images": [
-        "image6.jpg",
-        "image7.png",
-        "image8.gif",
-        "image9.bmp",
-        "image10.tiff"
-      ]
+      "files": ["R&A unit 1.pptx","R&A Unit-wise important questions.docx"],
+      "images": []
     },
     "MICRO PROCESSORS & MICRO CONTROLLERS": {
-      "files": [
-        "file11.pdf",
-        "file12.docx",
-        "file13.pptx",
-        "file14.xlsx",
-        "file15.txt"
-      ],
-      "images": [
-        "image11.jpg",
-        "image12.png",
-        "image13.gif",
-        "image14.bmp",
-        "image15.tiff"
-      ]
+      "files": ["MPMC Unit-2.pptx","mpmc-unit-2.pptx"],
+      "images": []
     },
     "COMPUTER NETWORKS": {
-      "files": [
-        "file16.pdf",
-        "file17.docx",
-        "file18.pptx",
-        "file19.xlsx",
-        "file20.txt"
-      ],
-      "images": [
-        "image16.jpg",
-        "image17.png",
-        "image18.gif",
-        "image19.bmp",
-        "image20.tiff"
-      ]
+      "files": ["CN UNIT -1(ppt).pptx","CN unit2 (ppt).pdf"],
+      "images": []
     },
     "AUTOMATA & COMPILER DESIGN": {
-      "files": [
-        "file21.pdf",
-        "file22.docx",
-        "file23.pptx",
-        "file24.xlsx",
-        "file25.txt"
-      ],
-      "PSD": [
-        "image21.jpg",
-        "image22.png",
-        "image23.gif",
-        "image24.bmp",
-        "image25.tiff"
-      ]
+      "files": ["ATCD UNIT 1.pdf"],
+      "images": []
     },
     "APPLICATION DEVELOPMENT - 1": {
-      "files": [
-        "file26.pdf",
-        "file27.docx",
-        "file28.pptx",
-        "file29.xlsx",
-        "file30.txt"
-      ],
-      "images": [
-        "image26.jpg",
-        "image27.png",
-        "image28.gif",
-        "image29.bmp",
-        "image30.tiff"
-      ]
+      "files": [],
+      "images": []
     },
     "ARTIFICIAL INTELLIGENCE LAB": {
-      "files": [
-        "file31.pdf",
-        "file32.docx",
-        "file33.pptx",
-        "file34.xlsx",
-        "file35.txt"
-      ],
-      "images": [
-        "image31.jpg",
-        "image32.png",
-        "image33.gif",
-        "image34.bmp",
-        "image35.tiff"
-      ]
+      "files": [],
+      "images": []
     },
     "MICRO PROCESSORS & MICRO CONTROLLERS LAB": {
-      "files": [
-        "file36.pdf",
-        "file37.docx",
-        "file38.pptx",
-        "file39.xlsx",
-        "file40.txt"
-      ],
-      "images": [
-        "image36.jpg",
-        "image37.png",
-        "image38.gif",
-        "image39.bmp",
-        "image40.tiff"
-      ]
+      "files": [],
+      "images": []
     },
     "PROFESSIONAL SKILL DEVELOPMENT": {
       "files": [],

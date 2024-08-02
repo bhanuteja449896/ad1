@@ -45,6 +45,33 @@ const Body = () => {
     setShowImages(true);
   };
 
+  const handleItemClick = (itemName) => {
+    const isImage = showImages; // Check if currently displaying images
+    const itemPath = isImage ? `/images/${itemName}` : `/files/${itemName}`;
+    const url = `http://localhost:3000${itemPath}`;
+    
+    if (isImage) {
+      // Create a link element for downloading
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = itemName; // Trigger download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Open the image in a new tab
+      window.open(url, '_blank');
+    } else {
+      // For files
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = itemName; // Trigger download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   return (
     <div className="body-container">
       <div className="names-list">
@@ -58,18 +85,18 @@ const Body = () => {
         {selectedName && (
           <>
             <div className="buttons-container">
-              <button className={showFiles ? "active" : ""} onClick={() => setShowFiles(true)}>Files</button>
-              <button className={!showFiles ? "active" : ""} onClick={() => setShowFiles(false)}>Images</button>
+              <button className={showFiles ? "active" : ""} onClick={handleToggleFiles}>Files</button>
+              <button className={!showFiles ? "active" : ""} onClick={handleToggleImages}>Images</button>
             </div>
             <div className="items-list">
               {showFiles
                 ? data[selectedName].files.map((file, index) => (
-                    <div key={index} className="item-box">
+                    <div key={index} className="item-box" onClick={() => handleItemClick(file)}>
                       {file}
                     </div>
                   ))
                 : data[selectedName].images.map((image, index) => (
-                    <div key={index} className="item-box">
+                    <div key={index} className="item-box" onClick={() => handleItemClick(image)}>
                       {image}
                     </div>
                   ))}
@@ -82,4 +109,3 @@ const Body = () => {
 };
 
 export default Body;
-

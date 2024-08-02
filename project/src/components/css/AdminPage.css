@@ -31,7 +31,8 @@
 }
 
 .name-item.selected {
-  background-color: #e0e0e0; /* Highlight selected name */
+  background-color: rgb(27, 25, 27); /* Highlight selected name */
+  color: white;
 }
 
 .data-display {
