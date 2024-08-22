@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import AdminNavbar from "./AdminNavbar";
 import "./css/AdminPage.css";
 
@@ -8,6 +8,7 @@ const AdminPage = () => {
   const [showFiles, setShowFiles] = useState(false);
   const [showImages, setShowImages] = useState(false);
   const [newName, setNewName] = useState("");
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -83,7 +84,6 @@ const AdminPage = () => {
           },
           body: JSON.stringify({ name: newName }),
         });
-        console.log(response);
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -96,6 +96,41 @@ const AdminPage = () => {
         console.error("Failed to add new name:", error);
       }
     }
+  };
+
+  const handleFileChange = async (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile && selectedName) {
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+      formData.append("name", selectedName);
+
+      try {
+        const response = await fetch("http://localhost:3000/upload-file", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        const updatedData = { ...data };
+        if (result.fileType === "file") {
+          updatedData[selectedName].files.push(result.fileName);
+        } else if (result.fileType === "image") {
+          updatedData[selectedName].images.push(result.fileName);
+        }
+        setData(updatedData);
+      } catch (error) {
+        console.error("Failed to upload file:", error);
+      }
+    }
+  };
+
+  const handleAddFileClick = () => {
+    fileInputRef.current.click();
   };
 
   return (
@@ -139,9 +174,14 @@ const AdminPage = () => {
                   Images
                 </button>
                 <div className="files-edit">
-                  <button>Add +</button>
+                  <button onClick={handleAddFileClick}>Add +</button>
                 </div>
-
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  style={{ display: "none" }}
+                  onChange={handleFileChange}
+                />
               </div>
               {showFiles && (
                 <>

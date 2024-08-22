@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import './css/Navbar.css';
 
 const Navbar = () => {
@@ -18,6 +18,9 @@ const Navbar = () => {
         <h3>INTERNET OF THINGS - III</h3>
       </div>
       <div className="ct-login">
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/" className="nav-link">Notes</Link>
+        <Link to="/timetable" className="nav-link">Time table</Link>
         <button onClick={handleAdminLoginClick}>Admin Login</button>
       </div>
     </nav>

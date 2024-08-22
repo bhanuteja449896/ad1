@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const multer = require("multer");
 const app = express();
 const port = 3000;
 const cors = require('cors');
@@ -8,27 +9,77 @@ const cors = require('cors');
 const jsonFilePath = path.join(__dirname, 'db.json');
 
 app.use(cors());
-
-// Middleware to parse JSON bodies
 app.use(express.json());
-
-// Serve static files from 'public' directory (if needed)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve files from the 'files' directory
+// Serve static files from 'files' and 'images' directories
 app.use('/files', express.static(path.join(__dirname, 'files')));
-
-// Serve images from the 'images' directory
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-// Test route
+// Configure multer for file upload
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const ext = path.extname(file.originalname).toLowerCase();
+    // Check if the file is an image
+    if ([".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg"].includes(ext)) {
+      cb(null, path.join(__dirname, "images"));
+    } else {
+      cb(null, path.join(__dirname, "files"));
+    }
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
 app.get('/test', (req, res) => {
   res.send('Hello World');
 });
 
-// Handle update data request
+app.post("/upload-file", upload.single("file"), (req, res) => {
+  const file = req.file;
+  const { name } = req.body;
+
+  if (!file) {
+    return res.status(400).json({ message: "No file uploaded" });
+  }
+
+  fs.readFile(jsonFilePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return res.status(500).json({ message: "Error reading file" });
+    }
+
+    const jsonData = JSON.parse(data);
+
+    if (!jsonData.folder[name]) {
+      return res.status(400).json({ message: "Folder not found" });
+    }
+
+    const ext = path.extname(file.originalname).toLowerCase();
+    const fileType = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg"].includes(ext) ? "image" : "file";
+
+    if (fileType === "image") {
+      jsonData.folder[name].images.push(file.originalname);
+    } else {
+      jsonData.folder[name].files.push(file.originalname);
+    }
+
+    fs.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), "utf8", (err) => {
+      if (err) {
+        console.error("Error writing file:", err);
+        return res.status(500).json({ message: "Error writing file" });
+      }
+
+      console.log("File successfully uploaded and db.json updated");
+      res.status(200).json({ fileName: file.originalname, fileType });
+    });
+  });
+});
+
 app.post("/update-data", (req, res) => {
-  console.log("Update Data Request Received");
   const newData = req.body;
 
   fs.readFile(jsonFilePath, "utf8", (err, data) => {
@@ -54,59 +105,49 @@ app.post("/update-data", (req, res) => {
   });
 });
 
-// Handle add folder request
 app.post("/add-folder", (req, res) => {
-  try {
-    const { name } = req.body; // Get the new folder name from the request
+  const { name } = req.body;
 
-    if (!name || typeof name !== 'string') {
-      return res.status(400).json({ message: "Invalid folder name" });
+  if (!name || typeof name !== 'string') {
+    return res.status(400).json({ message: "Invalid folder name" });
+  }
+
+  fs.readFile(jsonFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return res.status(500).json({ message: "Error reading file" });
     }
 
-    // Read the existing JSON data
-    fs.readFile(jsonFilePath, 'utf8', (err, data) => {
-      if (err) {
-        console.error("Error reading file:", err);
-        return res.status(500).json({ message: "Error reading file" });
+    let jsonData;
+    try {
+      jsonData = JSON.parse(data);
+    } catch (parseError) {
+      console.error("Error parsing JSON:", parseError);
+      return res.status(500).json({ message: "Error parsing JSON" });
+    }
+
+    if (!jsonData.folder) {
+      jsonData.folder = {};
+    }
+
+    if (!jsonData.folder[name]) {
+      jsonData.folder[name] = { files: [], images: [] };
+    } else {
+      return res.status(400).json({ message: "Folder already exists" });
+    }
+
+    fs.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8', (writeErr) => {
+      if (writeErr) {
+        console.error("Error writing file:", writeErr);
+        return res.status(500).json({ message: "Error writing file" });
       }
 
-      let jsonData;
-      try {
-        jsonData = JSON.parse(data);
-      } catch (parseError) {
-        console.error("Error parsing JSON:", parseError);
-        return res.status(500).json({ message: "Error parsing JSON" });
-      }
-
-      // Add the new folder with empty files and images arrays
-      if (!jsonData.folder) {
-        jsonData.folder = {};
-      }
-      
-      if (!jsonData.folder[name]) {
-        jsonData.folder[name] = { files: [], images: [] };
-      } else {
-        return res.status(400).json({ message: "Folder already exists" });
-      }
-
-      // Write the updated JSON data back to the file
-      fs.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8', (writeErr) => {
-        if (writeErr) {
-          console.error("Error writing file:", writeErr);
-          return res.status(500).json({ message: "Error writing file" });
-        }
-
-        console.log("Folder added successfully:", name);
-        res.status(200).json({ message: "Folder added successfully", data: { name, files: [], images: [] } });
-      });
+      console.log("Folder added successfully:", name);
+      res.status(200).json({ message: "Folder added successfully", data: { name, files: [], images: [] } });
     });
-  } catch (error) {
-    console.error("Error processing request:", error);
-    res.status(400).json({ message: "Error processing request" });
-  }
+  });
 });
 
-// Serve database content
 app.get('/get-db', (req, res) => {
   fs.readFile(jsonFilePath, 'utf8', (err, data) => {
     if (err) {
@@ -124,7 +165,6 @@ app.get('/get-db', (req, res) => {
   });
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

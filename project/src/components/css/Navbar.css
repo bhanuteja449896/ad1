@@ -58,6 +58,26 @@ nav {
     transition: color 0.3s ease;
 }
 
+.ct-login {
+    display: flex;
+    align-items: center;
+}
+
+.ct-login .nav-link {
+    margin-right: 20px;
+    font-size: 16px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease, font-size 0.3s ease, font-weight 0.3s ease;
+}
+
+.ct-login .nav-link:hover {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px; /* Increase font size on hover */
+}
+
 .ct-login button {
     padding: 10px 20px;
     font-size: 16px;

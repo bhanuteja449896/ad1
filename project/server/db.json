@@ -2,26 +2,37 @@
   "folder": {
     "EVENTS": {
       "files": [],
-      "images": ["circular.jpg","muharram.jpg","bonalu.jpg"]
+      "images": []
     },
     "ARTIFICIAL INTELLIGENCE": {
       "files": [],
-      "images": []
+      "images": [
+        "Screenshot 2024-07-04 114203.png"
+      ]
     },
     "ROBOTICS & AUTOMATION": {
-      "files": ["R&A unit 1.pptx","R&A Unit-wise important questions.docx"],
-      "images": []
+      "files": [],
+      "images": [
+        "Screenshot 2024-07-04 114203.png"
+      ]
     },
     "MICRO PROCESSORS & MICRO CONTROLLERS": {
-      "files": ["MPMC Unit-2.pptx","mpmc-unit-2.pptx"],
+      "files": [
+        "MPMC Unit-2.pptx",
+        "mpmc-unit-2.pptx"
+      ],
       "images": []
     },
     "COMPUTER NETWORKS": {
-      "files": ["CN UNIT -1(ppt).pptx","CN unit2 (ppt).pdf"],
+      "files": [
+        "CN unit2 (ppt).pdf"
+      ],
       "images": []
     },
     "AUTOMATA & COMPILER DESIGN": {
-      "files": ["ATCD UNIT 1.pdf"],
+      "files": [
+        "ATCD UNIT 1.pdf"
+      ],
       "images": []
     },
     "APPLICATION DEVELOPMENT - 1": {
@@ -37,6 +48,22 @@
       "images": []
     },
     "PROFESSIONAL SKILL DEVELOPMENT": {
+      "files": [],
+      "images": []
+    },
+    "Example": {
+      "files": [],
+      "images": []
+    },
+    "Placement papers": {
+      "files": [],
+      "images": []
+    },
+    "AI": {
+      "files": [],
+      "images": []
+    },
+    "data structures": {
       "files": [],
       "images": []
     }

@@ -76,7 +76,7 @@ const Body = () => {
     <div className="body-container">
       <div className="names-list">
         {Object.keys(data).map((name) => (
-          <div key={name} className="name-item" onClick={() => handleNameClick(name)}>
+          <div key={name} className={`name-item ${selectedName === name ? "selected" : ""}`} onClick={() => handleNameClick(name)}>
             {name}
           </div>
         ))}
