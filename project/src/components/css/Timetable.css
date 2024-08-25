@@ -1,0 +1,85 @@
+/* src/time-table.css */
+
+/* Ensure the navbar is properly styled */
+.navbar {
+    position: relative; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
+    background-color: #333; /* Adjust as needed */
+    color: white; /* Adjust as needed */
+    padding: 10px;
+}
+
+/* Adjust the timetable to account for the navbar */
+.time-table-container {
+    padding-top: 80px; /* Add padding to push the timetable below the fixed navbar */
+    position: fixed;
+    left : 70px ;
+}
+
+.upper {
+    background-color:  #4CAF50;
+    /* border-bottom: 2px solid white;  */
+}
+
+.first {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    /* border-bottom: 2px solid ;  */
+}
+
+.second {
+    background-color: #FFFFFF;
+    color: #333;
+    border-bottom: 1px solid grey; /* Add bottom border for rows */
+}
+
+.timing {
+    color: #FFFFFF;
+}
+
+table {
+    background-color: black;
+    width: 100%; /* Make table responsive */
+    max-width: 1200px; /* Set a max-width for larger screens */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse; /* Ensure clean borders */
+    border: 2px solid ; /* Add border around the table */
+}
+
+td, th {
+    padding: 10px; /* Add padding for cell content */
+    text-align: center; /* Center text */
+    color: #000000; /* Ensure readability */
+    border: 1px solid grey; /* Add border around each cell */
+}
+
+.time-table {
+    color: darkred;
+    text-align: center; /* Center align the title */
+}
+
+.Lunch {
+    /* transform: rotate(-90deg); */
+    font-size: 30px;
+    width: 150px;
+    text-align: center; /* Center align the rotated text */
+}
+
+.Day {
+    background-color: #4CAF50;
+    color: white; /* Ensure readability */
+}
+
+/* Add styles for responsive design */
+@media (max-width: 768px) {
+    table {
+        width: 100%; /* Ensure the table is responsive */
+    }
+
+    .time-table {
+        margin: 20px; /* Adjust margins for smaller screens */
+    }
+}

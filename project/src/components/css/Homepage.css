@@ -1,4 +1,5 @@
 /* src/HomePage.css */
+
 .homepage-container {
   display: flex;
   justify-content: space-between;
@@ -36,7 +37,7 @@ p {
   color: #000000;
   padding: 10px 20px;
   font-size: 18px;
-  /* border: none; */
+  border: 1px solid #000000; /* Set border width and color */
   cursor: pointer;
   border-radius: 5px;
 }
@@ -49,16 +50,5 @@ p {
 
 .Notes-button:hover {
   background-color: #43a047;
-}
-
-.image-section {
-  max-width: 40%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.image-section svg {
-  width: 100%;
-  margin-right: 150px; /* Optional: Adjust as needed */
+  color: #FFFFFF;
 }

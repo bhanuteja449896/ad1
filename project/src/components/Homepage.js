@@ -10,10 +10,13 @@ const Homepage = () => {
     navigate('/notes'); // Navigate to /notes path
   };
   return (
+
     <div className="homepage-container">
       <div className="content">
         <h1>
-          Class Archive <br />
+          Class Archive 
+          <br />
+          
           <span className="highlight"> Notes from your Subjects</span>
         </h1>
         <p>Download all your important notes in one place</p>

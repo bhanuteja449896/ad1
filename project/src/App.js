@@ -23,21 +23,24 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import MainHome from './components/Homepage';
 import Body from './components/Body';
-// import Timetable from './components/Timetable'; 
+import Timetable from './components/Timetable'; 
 import Login from './components/LoginPage';
 import AdminPage from './components/AdminPage'; // Assuming this is the login component
 
 const App = () => {
   return (
     <Router>
+      <div>
+
       <Navbar />
       <Routes>
         <Route path="/" element={<MainHome />} /> {/* Home page */}
         <Route path="/notes" element={<Body />} /> {/* Notes page */}
-        {/* <Route path="/timetable" element={<Timetable />} />  */}
+        <Route path="/timetable" element={<Timetable />} /> 
         <Route path="/login" element={<Login />} /> {/* Login page */}
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
+      </div>
     </Router>
   );
 };

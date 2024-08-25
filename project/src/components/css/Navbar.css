@@ -73,7 +73,7 @@ nav {
 }
 
 .ct-login .nav-link:hover {
-    color: #000;
+    color: #43a047;
     font-weight: bold;
     font-size: 18px; /* Increase font size on hover */
 }
@@ -92,8 +92,9 @@ nav {
 }
 
 .ct-login button:hover {
-    background-color: #f4f4f4;
-    color: #000;
+    background-color: #43a047;
+    color: #FFFFFF;
     transform: scale(1.05);
     border-color: #000;
+    border: 1px solid #2c3e50;
 }
