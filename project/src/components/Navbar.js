@@ -19,9 +19,9 @@ const Navbar = () => {
       </div>
       <div className="ct-login">
         <Link to="/" className="nav-link">Home</Link>
-        <Link to="/" className="nav-link">Notes</Link>
+        <Link to="/notes" className="nav-link">Notes</Link>
         <Link to="/timetable" className="nav-link">Time table</Link>
-        <button onClick={handleAdminLoginClick}>Admin Login</button>
+        <button onClick={() => window.location.href = '/login'}>Admin Login</button>
       </div>
     </nav>
   );

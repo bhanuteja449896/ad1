@@ -1,0 +1,64 @@
+/* src/HomePage.css */
+.homepage-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #FFFFFF;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+}
+
+.content {
+  max-width: 50%;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.highlight {
+  color: #4caf50;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.Notes-button {
+  display: flex; /* Ensures flex layout for the button */
+  align-items: center; /* Vertically center the content */
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 18px;
+  /* border: none; */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Notes-button img {
+  width: 20px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px; /* Space between text and image */
+}
+
+.Notes-button:hover {
+  background-color: #43a047;
+}
+
+.image-section {
+  max-width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image-section svg {
+  width: 100%;
+  margin-right: 150px; /* Optional: Adjust as needed */
+}

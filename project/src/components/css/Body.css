@@ -1,8 +1,9 @@
 .body-container {
     display: flex;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 72px); /* Adjust height to account for Navbar */
     background-color: white;
     overflow: hidden;
+    margin-top: 72px; /* Add margin to avoid content hiding behind Navbar */
 }
 
 .names-list {
