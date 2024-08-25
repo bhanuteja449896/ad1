@@ -5,9 +5,12 @@
       "images": []
     },
     "ARTIFICIAL INTELLIGENCE": {
-      "files": [],
+      "files": [
+        "ilovepdf_merged.pdf"
+      ],
       "images": [
-        "Screenshot 2024-07-04 114203.png"
+        "Screenshot 2024-07-04 114203.png",
+        "right-arrow.png"
       ]
     },
     "ROBOTICS & AUTOMATION": {
@@ -64,6 +67,10 @@
       "images": []
     },
     "data structures": {
+      "files": [],
+      "images": []
+    },
+    "Example 2 ": {
       "files": [],
       "images": []
     }

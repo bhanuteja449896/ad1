@@ -1,3 +1,5 @@
+/* src/Navbar.css */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -69,13 +71,30 @@ nav {
     color: #2c3e50;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    transition: color 0.3s ease, font-size 0.3s ease, font-weight 0.3s ease;
+    position: relative; /* Ensure proper positioning */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for scaling */
+}
+
+.ct-login .nav-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Space for underline */
+    height: 2px; /* Thickness of underline */
+    background: #43a047; /* Underline color */
+    transform: scaleX(0); /* Start with 0 width */
+    transition: transform 0.3s ease; /* Animate underline width */
 }
 
 .ct-login .nav-link:hover {
     color: #43a047;
-    font-weight: bold;
-    font-size: 18px; /* Increase font size on hover */
+    transform: scale(1.05); /* Increase size slightly */
+}
+
+.ct-login .nav-link:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
 }
 
 .ct-login button {
@@ -94,7 +113,6 @@ nav {
 .ct-login button:hover {
     background-color: #43a047;
     color: #FFFFFF;
-    transform: scale(1.05);
-    border-color: #000;
-    border: 1px solid #2c3e50;
+    transform: scale(1.05); /* Increase size slightly */
+    border-color: #000; /* Change border color */
 }

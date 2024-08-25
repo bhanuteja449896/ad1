@@ -52,3 +52,8 @@ p {
   background-color: #43a047;
   color: #FFFFFF;
 }
+
+.image-section {
+  display: flex;
+  margin-right : 100px;
+}
