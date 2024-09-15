@@ -115,4 +115,5 @@ nav {
     color: #FFFFFF;
     transform: scale(1.05); /* Increase size slightly */
     border-color: #000; /* Change border color */
+    border: 1px solid #2c3e50;
 }

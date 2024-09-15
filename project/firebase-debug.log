@@ -1,0 +1,1104 @@
+[debug] [2024-08-25T14:22:22.832Z] ----------------------------------------------------------------------
+[debug] [2024-08-25T14:22:22.834Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-08-25T14:22:22.834Z] CLI Version:   13.15.4
+[debug] [2024-08-25T14:22:22.835Z] Platform:      win32
+[debug] [2024-08-25T14:22:22.835Z] Node Version:  v20.15.0
+[debug] [2024-08-25T14:22:22.835Z] Time:          Sun Aug 25 2024 19:52:22 GMT+0530 (India Standard Time)
+[debug] [2024-08-25T14:22:22.835Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-25T14:22:22.880Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-25T14:22:22.880Z] > authorizing via signed-in user (bhanutejamakkineni@gmail.com)
+[debug] [2024-08-25T14:22:22.880Z] [iam] checking project class-archive-68f07 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-08-25T14:22:22.882Z] > refreshing access token with scopes: []
+[debug] [2024-08-25T14:22:22.883Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-25T14:22:22.883Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-25T14:22:23.213Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-08-25T14:22:23.213Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-25T14:22:23.218Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions [none]
+[debug] [2024-08-25T14:22:23.218Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:23.218Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:22:24.794Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions 200
+[debug] [2024-08-25T14:22:24.794Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:22:24.794Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-08-25T14:22:24.794Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-08-25T14:22:26.644Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-08-25T14:22:26.644Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'class-archive-68f07'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-08-25T14:22:26.649Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T14:22:27.555Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T14:22:27.555Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-08-25T14:22:27.559Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-08-25T14:22:27.559Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:27.561Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-08-25T14:22:27.561Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:27.563Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [none]
+[debug] [2024-08-25T14:22:27.563Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:27.564Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [none]
+[debug] [2024-08-25T14:22:27.564Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:29.581Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com 200
+[debug] [2024-08-25T14:22:29.581Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2024-08-25T14:22:29.582Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2024-08-25T14:22:29.582Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:29.585Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com 200
+[debug] [2024-08-25T14:22:29.586Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-08-25T14:22:29.605Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com 200
+[debug] [2024-08-25T14:22:29.605Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-08-25T14:22:29.692Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com 200
+[debug] [2024-08-25T14:22:29.692Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2024-08-25T14:22:29.693Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2024-08-25T14:22:29.693Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:30.232Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com:enable 200
+[debug] [2024-08-25T14:22:30.232Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2024-08-25T14:22:30.283Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com:enable 200
+[debug] [2024-08-25T14:22:30.283Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2024-08-25T14:22:40.246Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [none]
+[debug] [2024-08-25T14:22:40.247Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:40.296Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [none]
+[debug] [2024-08-25T14:22:40.296Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:42.118Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com 200
+[debug] [2024-08-25T14:22:42.118Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-08-25T14:22:42.152Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com 200
+[debug] [2024-08-25T14:22:42.152Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-08-25T14:22:42.155Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig [none]
+[debug] [2024-08-25T14:22:42.920Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig 200
+[debug] [2024-08-25T14:22:42.920Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig {"projectId":"class-archive-68f07","storageBucket":"class-archive-68f07.appspot.com"}
+[debug] [2024-08-25T14:22:42.921Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs [none]
+[debug] [2024-08-25T14:22:43.551Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs 200
+[debug] [2024-08-25T14:22:43.551Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs {}
+[debug] [2024-08-25T14:22:43.555Z] Validating nodejs source
+[debug] [2024-08-25T14:22:44.593Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-08-25T14:22:44.593Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-08-25T14:22:44.594Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-08-25T14:22:44.604Z] Found firebase-functions binary at 'C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8058
+
+[debug] [2024-08-25T14:22:45.148Z] Got response from /__/functions.yaml {"endpoints":{"app":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2024-08-25T14:22:50.208Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com [none]
+[debug] [2024-08-25T14:22:50.208Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:52.081Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com 200
+[debug] [2024-08-25T14:22:52.081Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com [omitted]
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions (62.73 KB) for uploading 
+[debug] [2024-08-25T14:22:52.166Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/class-archive-68f07/locations/-/functions [none]
+[debug] [2024-08-25T14:22:53.181Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/class-archive-68f07/locations/-/functions 200
+[debug] [2024-08-25T14:22:53.181Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/class-archive-68f07/locations/-/functions {}
+[debug] [2024-08-25T14:22:53.183Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-08-25T14:22:54.764Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/-/functions 200
+[debug] [2024-08-25T14:22:54.764Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-08-25T14:22:54.770Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com [none]
+[debug] [2024-08-25T14:22:54.770Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:54.770Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com [none]
+[debug] [2024-08-25T14:22:54.770Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:54.773Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com [none]
+[debug] [2024-08-25T14:22:54.773Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:54.777Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com [none]
+[debug] [2024-08-25T14:22:54.777Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:55.200Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com 200
+[debug] [2024-08-25T14:22:55.201Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com [omitted]
+[warn] !  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2024-08-25T14:22:55.202Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com:enable [none]
+[debug] [2024-08-25T14:22:55.202Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com:enable x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:56.577Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com 200
+[debug] [2024-08-25T14:22:56.577Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-08-25T14:22:56.836Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com 200
+[debug] [2024-08-25T14:22:56.836Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com [omitted]
+[warn] !  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2024-08-25T14:22:56.837Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com:enable [none]
+[debug] [2024-08-25T14:22:56.837Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com:enable x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:22:56.864Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com 200
+[debug] [2024-08-25T14:22:56.865Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2024-08-25T14:22:56.865Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com:enable 200
+[debug] [2024-08-25T14:22:56.865Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com:enable [omitted]
+[debug] [2024-08-25T14:22:57.451Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com:enable 200
+[debug] [2024-08-25T14:22:57.452Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2024-08-25T14:23:06.880Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com [none]
+[debug] [2024-08-25T14:23:06.880Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:23:07.459Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com [none]
+[debug] [2024-08-25T14:23:07.460Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:23:08.691Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com 200
+[debug] [2024-08-25T14:23:08.692Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-08-25T14:23:09.327Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com 200
+[debug] [2024-08-25T14:23:09.327Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-08-25T14:23:09.329Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-08-25T14:23:09.329Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-08-25T14:23:10.108Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-08-25T14:23:10.108Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-97285148963@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"114440518082202299703"}}
+[debug] [2024-08-25T14:23:10.244Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-08-25T14:23:10.244Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-97285148963@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"105656247574376727485"}}
+[debug] [2024-08-25T14:23:10.245Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T14:23:10.720Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T14:23:10.720Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[debug] [2024-08-25T14:23:10.721Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/class-archive-68f07/billingInfo [none]
+[debug] [2024-08-25T14:23:12.282Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/class-archive-68f07/billingInfo 200
+[debug] [2024-08-25T14:23:12.282Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/class-archive-68f07/billingInfo {"name":"projects/class-archive-68f07/billingInfo","projectId":"class-archive-68f07","billingAccountName":"billingAccounts/01EDA2-85B949-964949","billingEnabled":true}
+[debug] [2024-08-25T14:23:12.285Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2024-08-25T14:23:12.285Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions [none]
+[debug] [2024-08-25T14:23:12.285Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:23:12.285Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-08-25T14:23:13.925Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions 200
+[debug] [2024-08-25T14:23:13.925Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-08-25T14:23:13.925Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2024-08-25T14:23:13.926Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-08-25T14:23:16.616Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-08-25T14:23:16.616Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/4e8c0a45-4050-4dd9-8d90-39ae400130ad.zip?GoogleAccessId=service-97285148963@gcf-admin-robot.iam.gserviceaccount.com&Expires=1724597596&Signature=padAByAfNN9Metixlohwiyb1XrY9pHNlulkuVs6HmLNBgfRJ1oBYuyXFxcxytxDvYw6CdUD8ZQvlaLwa7Apn3v09N2rRZ8J4VUivYDJkC%2FyO%2FeHQ3yJ7146MNM%2BWDRBALd62ndqHyl97gDMYTCGUng8lC2cRS0SP7oS7mWkoyO0R1t3C3mgjquZ0vNWWiaJ2Y6vrIbdmEYwVeM6ZhM3%2BEHT%2FtHHd0FcNe7rJl4O1cK%2Bc1%2BQWYnyK4cVJt5hPZaTEJYzeXckhsnlLKd6MvUzQo0Xm%2Bm2V%2FexcZTOV3vndbJ1RGJIAv6LTdF1hj7CbH9EysB%2FzPfqEOOGMCn%2FQUwu%2FCg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-97285148963-us-central1","object":"4e8c0a45-4050-4dd9-8d90-39ae400130ad.zip"}}
+[debug] [2024-08-25T14:23:16.618Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/4e8c0a45-4050-4dd9-8d90-39ae400130ad.zip GoogleAccessId=service-97285148963%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1724597596&Signature=padAByAfNN9Metixlohwiyb1XrY9pHNlulkuVs6HmLNBgfRJ1oBYuyXFxcxytxDvYw6CdUD8ZQvlaLwa7Apn3v09N2rRZ8J4VUivYDJkC%2FyO%2FeHQ3yJ7146MNM%2BWDRBALd62ndqHyl97gDMYTCGUng8lC2cRS0SP7oS7mWkoyO0R1t3C3mgjquZ0vNWWiaJ2Y6vrIbdmEYwVeM6ZhM3%2BEHT%2FtHHd0FcNe7rJl4O1cK%2Bc1%2BQWYnyK4cVJt5hPZaTEJYzeXckhsnlLKd6MvUzQo0Xm%2Bm2V%2FexcZTOV3vndbJ1RGJIAv6LTdF1hj7CbH9EysB%2FzPfqEOOGMCn%2FQUwu%2FCg%3D%3D
+[debug] [2024-08-25T14:23:16.618Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/4e8c0a45-4050-4dd9-8d90-39ae400130ad.zip [stream]
+[debug] [2024-08-25T14:23:18.072Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/4e8c0a45-4050-4dd9-8d90-39ae400130ad.zip 200
+[debug] [2024-08-25T14:23:18.072Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/4e8c0a45-4050-4dd9-8d90-39ae400130ad.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 18 (2nd Gen) function app(us-central1)... 
+[debug] [2024-08-25T14:23:18.076Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions functionId=app
+[debug] [2024-08-25T14:23:18.076Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions {"name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-uploads-97285148963-us-central1","object":"4e8c0a45-4050-4dd9-8d90-39ae400130ad.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"}}
+[debug] [2024-08-25T14:23:20.725Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions 200
+[debug] [2024-08-25T14:23:20.725Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2024-08-25T14:23:20.725Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:23:21.055Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:23:21.055Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-08-25T14:23:21.555Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:23:21.555Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:23:22.833Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:23:22.833Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-08-25T14:23:23.845Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:23:23.845Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:23:25.132Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:23:25.132Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-08-25T14:23:27.144Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:23:27.145Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:23:28.504Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:23:28.504Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-08-25T14:23:32.517Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:23:32.518Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:23:33.821Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:23:33.821Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:23:41.831Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:23:41.831Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:23:43.285Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:23:43.285Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:23:53.298Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:23:53.298Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:23:54.734Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:23:54.734Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:24:04.744Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:24:04.745Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:24:06.201Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:24:06.201Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:24:16.215Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:24:16.216Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:24:17.651Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:24:17.652Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:24:27.661Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:24:27.662Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:24:29.136Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:24:29.136Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build finished","state":"COMPLETE","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","message":"Creating Cloud Run service","state":"IN_PROGRESS","resource":"projects/class-archive-68f07/locations/us-central1/services/app","resourceUri":"https://console.cloud.google.com/run/detail/us-central1/app?project=class-archive-68f07"}],"sourceToken":"ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzNlNTk0NjkyLWNmODUtNDA1Ni04MjY2LWI2NDg5YjVkOWNjYhJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCJL9rLYGEIjdhvIBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB","operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:24:29.136Z] Got source token ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzNlNTk0NjkyLWNmODUtNDA1Ni04MjY2LWI2NDg5YjVkOWNjYhJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCJL9rLYGEIjdhvIBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB for region us-central1
+[debug] [2024-08-25T14:24:39.142Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:24:39.142Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:24:40.648Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:24:40.648Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build finished","state":"COMPLETE","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","message":"Creating Cloud Run service","state":"IN_PROGRESS","resource":"projects/class-archive-68f07/locations/us-central1/services/app","resourceUri":"https://console.cloud.google.com/run/detail/us-central1/app?project=class-archive-68f07"}],"sourceToken":"ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzNlNTk0NjkyLWNmODUtNDA1Ni04MjY2LWI2NDg5YjVkOWNjYhJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCJL9rLYGEIjdhvIBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB","operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:24:40.648Z] Got source token ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzNlNTk0NjkyLWNmODUtNDA1Ni04MjY2LWI2NDg5YjVkOWNjYhJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCJL9rLYGEIjdhvIBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB for region us-central1
+[debug] [2024-08-25T14:24:50.660Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:24:50.661Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:24:52.786Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:24:52.786Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build finished","state":"COMPLETE","resource":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/3e594692-cf85-4056-8266-b6489b5d9ccb?project=97285148963"},{"name":"SERVICE","message":"Creating Cloud Run service","state":"IN_PROGRESS","resource":"projects/class-archive-68f07/locations/us-central1/services/app","resourceUri":"https://console.cloud.google.com/run/detail/us-central1/app?project=class-archive-68f07"}],"sourceToken":"ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzNlNTk0NjkyLWNmODUtNDA1Ni04MjY2LWI2NDg5YjVkOWNjYhJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCJL9rLYGEIjdhvIBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB","operationType":"CREATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb"},"done":false}
+[debug] [2024-08-25T14:24:52.787Z] Got source token ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzNlNTk0NjkyLWNmODUtNDA1Ni04MjY2LWI2NDg5YjVkOWNjYhJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCJL9rLYGEIjdhvIBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB for region us-central1
+[debug] [2024-08-25T14:25:02.794Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:25:02.795Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 [none]
+[debug] [2024-08-25T14:25:04.271Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 200
+[debug] [2024-08-25T14:25:04.271Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8 {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724595799151-62082bffd52cf-12a0a5c5-1e156ad8","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:23:20.488350894Z","endTime":"2024-08-25T14:24:55.420997183Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","message":"Deleting function artifacts in Artifact Registry","state":"COMPLETE"},{"name":"SERVICE","message":"Deleting Cloud Run service","state":"COMPLETE","resource":"projects/class-archive-68f07/locations/us-central1/services/app"}],"operationType":"CREATE_FUNCTION"},"done":true,"error":{"code":3,"message":"Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-zex' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-zex&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-zex%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start"}}
+[debug] [2024-08-25T14:25:04.272Z] Got source token undefined for region us-central1
+[error] Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-zex' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.
+
+Logs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-zex&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-zex%22 
+For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start
+[debug] [2024-08-25T14:25:04.281Z] Total Function Deployment time: 106199
+[debug] [2024-08-25T14:25:04.281Z] 1 Functions Deployed
+[debug] [2024-08-25T14:25:04.281Z] 1 Functions Errored
+[debug] [2024-08-25T14:25:04.281Z] 0 Function Deployments Aborted
+[debug] [2024-08-25T14:25:04.281Z] Average Function Deployment time: 106198
+[info] 
+[info] Functions deploy had errors with the following functions:
+	app(us-central1)
+[debug] [2024-08-25T14:25:05.524Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-08-25T14:25:05.525Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app [none]
+[debug] [2024-08-25T14:25:05.525Z] >>> [apiv2][query] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list [none]
+[debug] [2024-08-25T14:25:06.832Z] <<< [apiv2][status] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list 404
+[debug] [2024-08-25T14:25:06.832Z] <<< [apiv2][body] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-08-25T14:25:06.832Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2024-08-25T14:25:06.833Z] >>> [apiv2][query] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list [none]
+[debug] [2024-08-25T14:25:07.122Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app 404
+[debug] [2024-08-25T14:25:07.122Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app {"error":{"code":404,"message":"Package \"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-08-25T14:25:07.231Z] <<< [apiv2][status] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list 404
+[debug] [2024-08-25T14:25:07.231Z] <<< [apiv2][body] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-08-25T14:25:07.232Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2024-08-25T14:25:07.342Z] >>> [apiv2][query] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list [none]
+[debug] [2024-08-25T14:25:07.748Z] <<< [apiv2][status] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list 404
+[debug] [2024-08-25T14:25:07.749Z] <<< [apiv2][body] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-08-25T14:25:07.749Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/class-archive-68f07/us/gcf 
+[debug] [2024-08-25T14:25:07.750Z] Functions deploy failed.
+[debug] [2024-08-25T14:25:07.750Z] {
+  "endpoint": {
+    "id": "app",
+    "project": "class-archive-68f07",
+    "region": "us-central1",
+    "entryPoint": "app",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}",
+      "GCLOUD_PROJECT": "class-archive-68f07",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/class-archive-68f07/locations/us-central1/services/app"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-zex' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-zex&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-zex%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start",
+    "original": {
+      "code": 3,
+      "message": "Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-zex' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-zex&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-zex%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start"
+    },
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2024-08-25T14:25:07.855Z] Error: Failed to create function app in region us-central1
+    at C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:294:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV2Function (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:278:30)
+    at async Fabricator.createEndpoint (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:137:13)
+    at async handle (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:89:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2024-08-25T14:34:32.884Z] ----------------------------------------------------------------------
+[debug] [2024-08-25T14:34:32.886Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-08-25T14:34:32.886Z] CLI Version:   13.15.4
+[debug] [2024-08-25T14:34:32.886Z] Platform:      win32
+[debug] [2024-08-25T14:34:32.886Z] Node Version:  v20.15.0
+[debug] [2024-08-25T14:34:32.886Z] Time:          Sun Aug 25 2024 20:04:32 GMT+0530 (India Standard Time)
+[debug] [2024-08-25T14:34:32.886Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-25T14:34:32.941Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-25T14:34:32.941Z] > authorizing via signed-in user (bhanutejamakkineni@gmail.com)
+[debug] [2024-08-25T14:34:32.941Z] [iam] checking project class-archive-68f07 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-08-25T14:34:32.943Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions [none]
+[debug] [2024-08-25T14:34:32.944Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:34:32.944Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:34:34.654Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions 200
+[debug] [2024-08-25T14:34:34.654Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:34:34.654Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-08-25T14:34:34.654Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-08-25T14:34:36.488Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-08-25T14:34:36.488Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'class-archive-68f07'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-08-25T14:34:36.490Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T14:34:36.964Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T14:34:36.964Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-08-25T14:34:36.966Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-08-25T14:34:36.966Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:34:36.967Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-08-25T14:34:36.967Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:34:36.967Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [none]
+[debug] [2024-08-25T14:34:36.968Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:34:36.968Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [none]
+[debug] [2024-08-25T14:34:36.968Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:34:38.860Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com 200
+[debug] [2024-08-25T14:34:38.860Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-08-25T14:34:38.871Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com 200
+[debug] [2024-08-25T14:34:38.872Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-08-25T14:34:38.899Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com 200
+[debug] [2024-08-25T14:34:38.900Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-08-25T14:34:39.114Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com 200
+[debug] [2024-08-25T14:34:39.114Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-08-25T14:34:39.115Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig [none]
+[debug] [2024-08-25T14:34:39.477Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig 200
+[debug] [2024-08-25T14:34:39.477Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig {"projectId":"class-archive-68f07","storageBucket":"class-archive-68f07.appspot.com"}
+[debug] [2024-08-25T14:34:39.477Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs [none]
+[debug] [2024-08-25T14:34:40.028Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs 200
+[debug] [2024-08-25T14:34:40.028Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs {}
+[debug] [2024-08-25T14:34:40.030Z] Validating nodejs source
+[debug] [2024-08-25T14:34:40.797Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-08-25T14:34:40.797Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-08-25T14:34:40.798Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-08-25T14:34:40.803Z] Found firebase-functions binary at 'C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8786
+
+[error] node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8786
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\index.js:174:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1925:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8786
+}
+
+Node.js v20.15.0
+
+[debug] [2024-08-25T14:34:41.252Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8786/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8786/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-08-25T14:34:41.741Z] FetchError: request to http://127.0.0.1:8786/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:500:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-08-25T14:38:01.356Z] ----------------------------------------------------------------------
+[debug] [2024-08-25T14:38:01.357Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-08-25T14:38:01.358Z] CLI Version:   13.15.4
+[debug] [2024-08-25T14:38:01.358Z] Platform:      win32
+[debug] [2024-08-25T14:38:01.358Z] Node Version:  v20.15.0
+[debug] [2024-08-25T14:38:01.358Z] Time:          Sun Aug 25 2024 20:08:01 GMT+0530 (India Standard Time)
+[debug] [2024-08-25T14:38:01.358Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-25T14:38:01.406Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-25T14:38:01.406Z] > authorizing via signed-in user (bhanutejamakkineni@gmail.com)
+[debug] [2024-08-25T14:38:01.406Z] [iam] checking project class-archive-68f07 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-08-25T14:38:01.407Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions [none]
+[debug] [2024-08-25T14:38:01.407Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:01.408Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:38:02.937Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions 200
+[debug] [2024-08-25T14:38:02.937Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:38:02.937Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-08-25T14:38:02.938Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-08-25T14:38:04.663Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-08-25T14:38:04.663Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'class-archive-68f07'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-08-25T14:38:04.666Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T14:38:05.155Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T14:38:05.155Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-08-25T14:38:05.157Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-08-25T14:38:05.157Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:05.158Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-08-25T14:38:05.158Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:05.158Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [none]
+[debug] [2024-08-25T14:38:05.158Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:05.159Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [none]
+[debug] [2024-08-25T14:38:05.159Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:07.110Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com 200
+[debug] [2024-08-25T14:38:07.110Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-08-25T14:38:07.121Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com 200
+[debug] [2024-08-25T14:38:07.121Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-08-25T14:38:07.125Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com 200
+[debug] [2024-08-25T14:38:07.125Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-08-25T14:38:07.180Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com 200
+[debug] [2024-08-25T14:38:07.180Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-08-25T14:38:07.181Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig [none]
+[debug] [2024-08-25T14:38:07.704Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig 200
+[debug] [2024-08-25T14:38:07.704Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig {"projectId":"class-archive-68f07","storageBucket":"class-archive-68f07.appspot.com"}
+[debug] [2024-08-25T14:38:07.704Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs [none]
+[debug] [2024-08-25T14:38:08.799Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs 200
+[debug] [2024-08-25T14:38:08.799Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs {}
+[debug] [2024-08-25T14:38:08.800Z] Validating nodejs source
+[debug] [2024-08-25T14:38:09.917Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-08-25T14:38:09.917Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-08-25T14:38:09.919Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-08-25T14:38:09.937Z] Found firebase-functions binary at 'C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8352
+
+[error] C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\index.js:175
+  console.log(`Server running on port 8786   ${port}`);
+                                               ^
+
+ReferenceError: port is not defined
+    at Server.<anonymous> (C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\index.js:175:48)
+    at Object.onceWrapper (node:events:633:28)
+    at Server.emit (node:events:531:35)
+    at emitListeningNT (node:net:1932:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
+
+Node.js v20.15.0
+
+[debug] [2024-08-25T14:38:10.360Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8352/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8352/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-08-25T14:38:11.243Z] FetchError: request to http://127.0.0.1:8352/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:500:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-08-25T14:38:41.065Z] ----------------------------------------------------------------------
+[debug] [2024-08-25T14:38:41.067Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-08-25T14:38:41.067Z] CLI Version:   13.15.4
+[debug] [2024-08-25T14:38:41.067Z] Platform:      win32
+[debug] [2024-08-25T14:38:41.067Z] Node Version:  v20.15.0
+[debug] [2024-08-25T14:38:41.067Z] Time:          Sun Aug 25 2024 20:08:41 GMT+0530 (India Standard Time)
+[debug] [2024-08-25T14:38:41.067Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-25T14:38:41.113Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-25T14:38:41.114Z] > authorizing via signed-in user (bhanutejamakkineni@gmail.com)
+[debug] [2024-08-25T14:38:41.114Z] [iam] checking project class-archive-68f07 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-08-25T14:38:41.115Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions [none]
+[debug] [2024-08-25T14:38:41.115Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:41.115Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:38:42.673Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions 200
+[debug] [2024-08-25T14:38:42.673Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:38:42.674Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-08-25T14:38:42.674Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-08-25T14:38:43.186Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-08-25T14:38:43.186Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'class-archive-68f07'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-08-25T14:38:43.190Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T14:38:43.822Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T14:38:43.822Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-08-25T14:38:43.824Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-08-25T14:38:43.824Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:43.825Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-08-25T14:38:43.825Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:43.825Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [none]
+[debug] [2024-08-25T14:38:43.826Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:43.826Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [none]
+[debug] [2024-08-25T14:38:43.826Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:38:44.760Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com 200
+[debug] [2024-08-25T14:38:44.760Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-08-25T14:38:46.062Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com 200
+[debug] [2024-08-25T14:38:46.063Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-08-25T14:38:46.270Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com 200
+[debug] [2024-08-25T14:38:46.270Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-08-25T14:38:46.272Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com 200
+[debug] [2024-08-25T14:38:46.272Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-08-25T14:38:46.272Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig [none]
+[debug] [2024-08-25T14:38:46.826Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig 200
+[debug] [2024-08-25T14:38:46.826Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig {"projectId":"class-archive-68f07","storageBucket":"class-archive-68f07.appspot.com"}
+[debug] [2024-08-25T14:38:46.827Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs [none]
+[debug] [2024-08-25T14:38:47.258Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs 200
+[debug] [2024-08-25T14:38:47.258Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs {}
+[debug] [2024-08-25T14:38:47.260Z] Validating nodejs source
+[debug] [2024-08-25T14:38:48.889Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-08-25T14:38:48.889Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-08-25T14:38:48.892Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-08-25T14:38:48.899Z] Found firebase-functions binary at 'C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8813
+
+[info] Server running on port 8786   
+
+[debug] [2024-08-25T14:38:49.327Z] Got response from /__/functions.yaml {"endpoints":{"app":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2024-08-25T14:38:59.355Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com [none]
+[debug] [2024-08-25T14:38:59.355Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:39:01.198Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com 200
+[debug] [2024-08-25T14:39:01.199Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/firebaseextensions.googleapis.com [omitted]
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions (62.82 KB) for uploading 
+[debug] [2024-08-25T14:39:01.235Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/class-archive-68f07/locations/-/functions [none]
+[debug] [2024-08-25T14:39:02.246Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/class-archive-68f07/locations/-/functions 200
+[debug] [2024-08-25T14:39:02.246Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/class-archive-68f07/locations/-/functions {}
+[debug] [2024-08-25T14:39:02.247Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-08-25T14:39:03.866Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/-/functions 200
+[debug] [2024-08-25T14:39:03.866Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/-/functions {"functions":[{"name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"build":"projects/97285148963/locations/us-central1/builds/3e594692-cf85-4056-8266-b6489b5d9ccb","runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"state":"FAILED","updateTime":"2024-08-25T14:24:55.428920266Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"15a9f099f86fcdb8e9736c5e2db1b746dcb030e7"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app","createTime":"2024-08-25T14:23:20.484213255Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-08-25T14:39:03.871Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com [none]
+[debug] [2024-08-25T14:39:03.871Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:39:03.871Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com [none]
+[debug] [2024-08-25T14:39:03.871Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:39:03.873Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com [none]
+[debug] [2024-08-25T14:39:03.873Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:39:03.874Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com [none]
+[debug] [2024-08-25T14:39:03.874Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:39:04.303Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com 200
+[debug] [2024-08-25T14:39:04.303Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-08-25T14:39:05.777Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com 200
+[debug] [2024-08-25T14:39:05.778Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2024-08-25T14:39:05.780Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com 200
+[debug] [2024-08-25T14:39:05.781Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-08-25T14:39:05.965Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com 200
+[debug] [2024-08-25T14:39:05.965Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-08-25T14:39:05.966Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-08-25T14:39:05.967Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-08-25T14:39:06.438Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-08-25T14:39:06.438Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-97285148963@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"114440518082202299703"}}
+[debug] [2024-08-25T14:39:06.528Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-08-25T14:39:06.528Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/97285148963/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-97285148963@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"105656247574376727485"}}
+[debug] [2024-08-25T14:39:06.529Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T14:39:07.032Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T14:39:07.032Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[debug] [2024-08-25T14:39:07.033Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/class-archive-68f07/billingInfo [none]
+[debug] [2024-08-25T14:39:08.543Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/class-archive-68f07/billingInfo 200
+[debug] [2024-08-25T14:39:08.543Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/class-archive-68f07/billingInfo {"name":"projects/class-archive-68f07/billingInfo","projectId":"class-archive-68f07","billingAccountName":"billingAccounts/01EDA2-85B949-964949","billingEnabled":true}
+[debug] [2024-08-25T14:39:08.544Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-08-25T14:39:09.921Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-08-25T14:39:09.921Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/98a0102f-e40a-4cc5-ba6a-6f04178d4593.zip?GoogleAccessId=service-97285148963@gcf-admin-robot.iam.gserviceaccount.com&Expires=1724598549&Signature=Co5iBNHmzvYkJCGRtqATuVobno6zDW3EuCP44WYgoBcjoLgJulT5Wb%2FRWa35u5mhEROADV7aiXO7g%2BgrolzNWCCYILAbRpfivijfx%2FLa8rdxPeQs8McF7%2FAtoMv0fxuPa9Kqk3MXSEES7p7er46KUohd3u4oyjRvGA%2BbEhWvQs3fHIrRiNeH9J1gRa6w%2BLq%2Bv3TyioxE7hSvFdaO8LgB%2FbphwZiNtIOx%2F11fpzVZW2fj%2FTA2hKft9ef6NYJEWhmyJgb9Nl0rxbZ%2B0UhGR7lHvUsWOUOIGO3omJ64bHdbnxUQAn9sdIThzqolw4zCYc8zUMuBOknokPEb8xiIlc7LvA%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-97285148963-us-central1","object":"98a0102f-e40a-4cc5-ba6a-6f04178d4593.zip"}}
+[debug] [2024-08-25T14:39:09.922Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/98a0102f-e40a-4cc5-ba6a-6f04178d4593.zip GoogleAccessId=service-97285148963%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1724598549&Signature=Co5iBNHmzvYkJCGRtqATuVobno6zDW3EuCP44WYgoBcjoLgJulT5Wb%2FRWa35u5mhEROADV7aiXO7g%2BgrolzNWCCYILAbRpfivijfx%2FLa8rdxPeQs8McF7%2FAtoMv0fxuPa9Kqk3MXSEES7p7er46KUohd3u4oyjRvGA%2BbEhWvQs3fHIrRiNeH9J1gRa6w%2BLq%2Bv3TyioxE7hSvFdaO8LgB%2FbphwZiNtIOx%2F11fpzVZW2fj%2FTA2hKft9ef6NYJEWhmyJgb9Nl0rxbZ%2B0UhGR7lHvUsWOUOIGO3omJ64bHdbnxUQAn9sdIThzqolw4zCYc8zUMuBOknokPEb8xiIlc7LvA%3D%3D
+[debug] [2024-08-25T14:39:09.922Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/98a0102f-e40a-4cc5-ba6a-6f04178d4593.zip [stream]
+[debug] [2024-08-25T14:39:12.519Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/98a0102f-e40a-4cc5-ba6a-6f04178d4593.zip 200
+[debug] [2024-08-25T14:39:12.520Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-97285148963-us-central1/98a0102f-e40a-4cc5-ba6a-6f04178d4593.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 (2nd Gen) function app(us-central1)... 
+[debug] [2024-08-25T14:39:12.525Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions/app updateMask=name%2CbuildConfig.runtime%2CbuildConfig.entryPoint%2CbuildConfig.source.storageSource.bucket%2CbuildConfig.source.storageSource.object%2CbuildConfig.environmentVariables%2CbuildConfig.sourceToken%2CserviceConfig.environmentVariables%2CserviceConfig.ingressSettings%2CserviceConfig.timeoutSeconds%2CserviceConfig.serviceAccountEmail%2CserviceConfig.availableMemory%2CserviceConfig.minInstanceCount%2CserviceConfig.maxInstanceCount%2CserviceConfig.maxInstanceRequestConcurrency%2CserviceConfig.availableCpu%2CserviceConfig.vpcConnector%2CserviceConfig.vpcConnectorEgressSettings%2Clabels%2CbuildConfig.buildEnvironmentVariables
+[debug] [2024-08-25T14:39:12.525Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions/app {"name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-uploads-97285148963-us-central1","object":"98a0102f-e40a-4cc5-ba6a-6f04178d4593.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"}}
+[debug] [2024-08-25T14:39:14.681Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions/app 200
+[debug] [2024-08-25T14:39:14.681Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/functions/app {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2024-08-25T14:39:14.682Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:39:16.169Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:39:16.169Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:39:16.673Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:39:16.673Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:39:17.965Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:39:17.965Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:39:18.978Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:39:18.978Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:39:20.335Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:39:20.336Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:39:22.349Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:39:22.350Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:39:23.708Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:39:23.708Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:39:27.712Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:39:27.712Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:39:29.025Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:39:29.025Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:39:37.035Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:39:37.036Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:39:38.594Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:39:38.594Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:39:48.610Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:39:48.610Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:39:50.113Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:39:50.113Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:40:00.120Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:40:00.121Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:40:03.445Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:40:03.445Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"BUILD","message":"Build finished","state":"COMPLETE","resource":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/7718e2ba-a356-40bb-8eed-7fa449626fae?project=97285148963"},{"name":"SERVICE","message":"Updating Cloud Run service","state":"IN_PROGRESS","resource":"projects/class-archive-68f07/locations/us-central1/services/app","resourceUri":"https://console.cloud.google.com/run/detail/us-central1/app?project=class-archive-68f07","stateMessages":[{"severity":"WARNING","type":"CloudRunServiceRecreated","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The service was redeployed with default values."}]}],"sourceToken":"ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzc3MThlMmJhLWEzNTYtNDBiYi04ZWVkLTdmYTQ0OTYyNmZhZRJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCMKErbYGEIisraUBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB","operationType":"UPDATE_FUNCTION","buildName":"projects/97285148963/locations/us-central1/builds/7718e2ba-a356-40bb-8eed-7fa449626fae"},"done":false}
+[debug] [2024-08-25T14:40:03.445Z] Got source token ClZwcm9qZWN0cy85NzI4NTE0ODk2My9sb2NhdGlvbnMvdXMtY2VudHJhbDEvYnVpbGRzLzc3MThlMmJhLWEzNTYtNDBiYi04ZWVkLTdmYTQ0OTYyNmZhZRJvdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvY2xhc3MtYXJjaGl2ZS02OGYwNy9nY2YtYXJ0aWZhY3RzL2NsYXNzLS1hcmNoaXZlLS02OGYwN19fdXMtLWNlbnRyYWwxX19hcHA6dmVyc2lvbl8xGKOilrXqAiJAcHJvamVjdHMvY2xhc3MtYXJjaGl2ZS02OGYwNy9sb2NhdGlvbnMvdXMtY2VudHJhbDEvZnVuY3Rpb25zL2FwcCoMCMKErbYGEIisraUBMghub2RlanMxODp2CiNnY3IuaW8vZ2FlLXJ1bnRpbWVzL25vZGVqczE4OnN0YWJsZRJPdXMtY2VudHJhbDEtZG9ja2VyLnBrZy5kZXYvc2VydmVybGVzcy1ydW50aW1lcy9nb29nbGUtMjItZnVsbC9ydW50aW1lcy9ub2RlanMxOEAB for region us-central1
+[debug] [2024-08-25T14:40:13.448Z] [update-default-us-central1-app] Retrying task index 0
+[debug] [2024-08-25T14:40:13.449Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac [none]
+[debug] [2024-08-25T14:40:15.340Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac 200
+[debug] [2024-08-25T14:40:15.340Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac {"name":"projects/class-archive-68f07/locations/us-central1/operations/operation-1724596753701-62082f8e29bd7-5cee7fdf-605531ac","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-08-25T14:39:14.352760431Z","endTime":"2024-08-25T14:40:11.167334309Z","target":"projects/class-archive-68f07/locations/us-central1/functions/app","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/class-archive-68f07/locations/us-central1/functions/app","buildConfig":{"runtime":"nodejs18","entryPoint":"app","source":{"storageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724596754319012"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-97285148963-us-central1","object":"app/function-source.zip","generation":"1724595800180990"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/class-archive-68f07/serviceAccounts/97285148963-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/class-archive-68f07/locations/us-central1/services/app","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}","GCLOUD_PROJECT":"class-archive-68f07","EVENTARC_CLOUD_EVENT_SOURCE":"projects/class-archive-68f07/locations/us-central1/services/app","FUNCTION_TARGET":"app","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"97285148963-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"eeb352f426a1c55f251b471f6a863cba2051c600"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/class-archive-68f07/locations/us-central1/services/app for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-class-archive-68f07.cloudfunctions.net/app"},"stages":[{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":true,"error":{"code":3,"message":"Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-toj' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-toj&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-toj%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start"}}
+[debug] [2024-08-25T14:40:15.340Z] Got source token undefined for region us-central1
+[error] Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-toj' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.
+
+Logs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-toj&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-toj%22 
+For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start
+[debug] [2024-08-25T14:40:15.344Z] Total Function Deployment time: 62805
+[debug] [2024-08-25T14:40:15.344Z] 1 Functions Deployed
+[debug] [2024-08-25T14:40:15.344Z] 1 Functions Errored
+[debug] [2024-08-25T14:40:15.344Z] 0 Function Deployments Aborted
+[debug] [2024-08-25T14:40:15.344Z] Average Function Deployment time: 62804
+[info] 
+[info] Functions deploy had errors with the following functions:
+	app(us-central1)
+[debug] [2024-08-25T14:40:17.140Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-08-25T14:40:17.141Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app [none]
+[debug] [2024-08-25T14:40:17.142Z] >>> [apiv2][query] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list [none]
+[debug] [2024-08-25T14:40:19.327Z] <<< [apiv2][status] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list 404
+[debug] [2024-08-25T14:40:19.327Z] <<< [apiv2][body] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-08-25T14:40:19.328Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2024-08-25T14:40:19.329Z] >>> [apiv2][query] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list [none]
+[debug] [2024-08-25T14:40:20.050Z] <<< [apiv2][status] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list 404
+[debug] [2024-08-25T14:40:20.051Z] <<< [apiv2][body] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-08-25T14:40:20.051Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2024-08-25T14:40:20.160Z] >>> [apiv2][query] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list [none]
+[debug] [2024-08-25T14:40:20.777Z] <<< [apiv2][status] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list 404
+[debug] [2024-08-25T14:40:20.777Z] <<< [apiv2][body] GET https://us.gcr.io/v2/class-archive-68f07/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-08-25T14:40:20.777Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2024-08-25T14:40:22.598Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app 404
+[debug] [2024-08-25T14:40:22.598Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app {"error":{"code":404,"message":"Package \"projects/class-archive-68f07/locations/us-central1/repositories/gcf-artifacts/packages/app\" was not found.","status":"NOT_FOUND"}}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/class-archive-68f07/us/gcf 
+[debug] [2024-08-25T14:40:22.599Z] Functions deploy failed.
+[debug] [2024-08-25T14:40:22.599Z] {
+  "endpoint": {
+    "id": "app",
+    "project": "class-archive-68f07",
+    "region": "us-central1",
+    "entryPoint": "app",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"class-archive-68f07\",\"storageBucket\":\"class-archive-68f07.appspot.com\"}",
+      "GCLOUD_PROJECT": "class-archive-68f07",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/class-archive-68f07/locations/us-central1/services/app"
+    },
+    "codebase": "default",
+    "securityLevel": "SECURE_ALWAYS",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "eeb352f426a1c55f251b471f6a863cba2051c600"
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-toj' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-toj&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-toj%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start",
+    "original": {
+      "code": 3,
+      "message": "Could not create or update Cloud Run service app, Container Healthcheck failed. Revision 'app-00001-toj' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=class-archive-68f07&resource=cloud_run_revision/service_name/app/revision_name/app-00001-toj&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22app%22%0Aresource.labels.revision_name%3D%22app-00001-toj%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start"
+    },
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2024-08-25T14:40:23.150Z] Error: Failed to update function app in region us-central1
+    at C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:399:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV2Function (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:388:32)
+    at async Fabricator.updateEndpoint (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:155:13)
+    at async handle (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:89:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2024-08-25T14:43:08.985Z] ----------------------------------------------------------------------
+[debug] [2024-08-25T14:43:08.987Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-08-25T14:43:08.987Z] CLI Version:   13.15.4
+[debug] [2024-08-25T14:43:08.987Z] Platform:      win32
+[debug] [2024-08-25T14:43:08.987Z] Node Version:  v20.15.0
+[debug] [2024-08-25T14:43:08.987Z] Time:          Sun Aug 25 2024 20:13:08 GMT+0530 (India Standard Time)
+[debug] [2024-08-25T14:43:08.987Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-25T14:43:09.032Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-25T14:43:09.032Z] > authorizing via signed-in user (bhanutejamakkineni@gmail.com)
+[debug] [2024-08-25T14:43:09.032Z] [iam] checking project class-archive-68f07 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-08-25T14:43:09.034Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions [none]
+[debug] [2024-08-25T14:43:09.034Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:43:09.034Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:43:10.637Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions 200
+[debug] [2024-08-25T14:43:10.637Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T14:43:10.638Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-08-25T14:43:10.638Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-08-25T14:43:12.473Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-08-25T14:43:12.473Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'class-archive-68f07'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-08-25T14:43:12.476Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T14:43:13.062Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T14:43:13.063Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-08-25T14:43:13.067Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-08-25T14:43:13.067Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:43:13.069Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-08-25T14:43:13.069Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:43:13.071Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [none]
+[debug] [2024-08-25T14:43:13.071Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:43:13.072Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [none]
+[debug] [2024-08-25T14:43:13.073Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T14:43:14.971Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com 200
+[debug] [2024-08-25T14:43:14.971Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-08-25T14:43:14.979Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com 200
+[debug] [2024-08-25T14:43:14.979Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-08-25T14:43:15.248Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com 200
+[debug] [2024-08-25T14:43:15.248Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-08-25T14:43:15.263Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com 200
+[debug] [2024-08-25T14:43:15.263Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-08-25T14:43:15.263Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig [none]
+[debug] [2024-08-25T14:43:15.648Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig 200
+[debug] [2024-08-25T14:43:15.649Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig {"projectId":"class-archive-68f07","storageBucket":"class-archive-68f07.appspot.com"}
+[debug] [2024-08-25T14:43:15.649Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs [none]
+[debug] [2024-08-25T14:43:16.318Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs 200
+[debug] [2024-08-25T14:43:16.318Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs {}
+[debug] [2024-08-25T14:43:16.320Z] Validating nodejs source
+[debug] [2024-08-25T14:43:17.060Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-08-25T14:43:17.060Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-08-25T14:43:17.061Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-08-25T14:43:17.069Z] Found firebase-functions binary at 'C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8822
+
+[error] node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8786
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\index.js:174:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1925:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8786
+}
+
+Node.js v20.15.0
+
+[debug] [2024-08-25T14:43:17.487Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8822/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8822/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-08-25T14:43:17.700Z] FetchError: request to http://127.0.0.1:8822/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:500:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-08-25T15:09:06.608Z] ----------------------------------------------------------------------
+[debug] [2024-08-25T15:09:06.609Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-08-25T15:09:06.610Z] CLI Version:   13.15.4
+[debug] [2024-08-25T15:09:06.610Z] Platform:      win32
+[debug] [2024-08-25T15:09:06.610Z] Node Version:  v20.15.0
+[debug] [2024-08-25T15:09:06.610Z] Time:          Sun Aug 25 2024 20:39:06 GMT+0530 (India Standard Time)
+[debug] [2024-08-25T15:09:06.610Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-25T15:09:06.656Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-25T15:09:06.657Z] > authorizing via signed-in user (bhanutejamakkineni@gmail.com)
+[debug] [2024-08-25T15:09:06.657Z] [iam] checking project class-archive-68f07 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-08-25T15:09:06.658Z] > refreshing access token with scopes: []
+[debug] [2024-08-25T15:09:06.659Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-25T15:09:06.659Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-25T15:09:07.066Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-08-25T15:09:07.066Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-25T15:09:07.072Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions [none]
+[debug] [2024-08-25T15:09:07.072Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T15:09:07.072Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T15:09:08.633Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions 200
+[debug] [2024-08-25T15:09:08.633Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/class-archive-68f07:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-08-25T15:09:08.634Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-08-25T15:09:08.634Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-08-25T15:09:10.440Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-08-25T15:09:10.440Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/class-archive-68f07/serviceAccounts/class-archive-68f07@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'class-archive-68f07'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-08-25T15:09:10.446Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 [none]
+[debug] [2024-08-25T15:09:10.996Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 200
+[debug] [2024-08-25T15:09:10.996Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07 {"projectId":"class-archive-68f07","projectNumber":"97285148963","displayName":"Class Archive","name":"projects/class-archive-68f07","resources":{"hostingSite":"class-archive-68f07"},"state":"ACTIVE","etag":"1_028deb3a-8130-44aa-825d-6db7f2a747f3"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-08-25T15:09:10.998Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-08-25T15:09:10.998Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T15:09:10.999Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-08-25T15:09:10.999Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T15:09:11.000Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [none]
+[debug] [2024-08-25T15:09:11.000Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T15:09:11.001Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [none]
+[debug] [2024-08-25T15:09:11.001Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com x-goog-quota-user=projects/class-archive-68f07
+[debug] [2024-08-25T15:09:12.917Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com 200
+[debug] [2024-08-25T15:09:12.917Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-08-25T15:09:12.941Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com 200
+[debug] [2024-08-25T15:09:12.941Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-08-25T15:09:12.967Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com 200
+[debug] [2024-08-25T15:09:12.967Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-08-25T15:09:13.195Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com 200
+[debug] [2024-08-25T15:09:13.195Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/class-archive-68f07/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-08-25T15:09:13.195Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig [none]
+[debug] [2024-08-25T15:09:13.726Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig 200
+[debug] [2024-08-25T15:09:13.727Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/class-archive-68f07/adminSdkConfig {"projectId":"class-archive-68f07","storageBucket":"class-archive-68f07.appspot.com"}
+[debug] [2024-08-25T15:09:13.727Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs [none]
+[debug] [2024-08-25T15:09:14.333Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs 200
+[debug] [2024-08-25T15:09:14.333Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/class-archive-68f07/configs {}
+[debug] [2024-08-25T15:09:14.334Z] Validating nodejs source
+[debug] [2024-08-25T15:09:15.159Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-08-25T15:09:15.159Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-08-25T15:09:15.161Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-08-25T15:09:15.174Z] Found firebase-functions binary at 'C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8114
+
+[error] node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8786
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\kiran\OneDrive\Desktop\project\ad1\project\functions\index.js:175:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1925:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8786
+}
+
+Node.js v20.15.0
+
+[debug] [2024-08-25T15:09:15.614Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8114/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8114/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-08-25T15:09:15.886Z] FetchError: request to http://127.0.0.1:8114/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\kiran\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:500:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
